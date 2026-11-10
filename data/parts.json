@@ -1,0 +1,145 @@
+[
+  {
+    "id": 1,
+    "name": "JVT Power Pipe V3 Adjustable",
+    "model": "NMAX / Aerox",
+    "category": "Performance",
+    "price": 7100,
+    "old": 7450,
+    "tag": "PREFERRED",
+    "rating": "4.8",
+    "reviews": 675,
+    "img": "/assets/product-1.jpg",
+    "desc": "Adjustable performance power pipe compatible with NMAX and Aerox.",
+    "types": [
+      "28mm",
+      "32mm",
+      "38mm",
+      "Silent Killer"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "BOM X LYNX 5-Spoke Star CNC Alloy Wheel",
+    "model": "Honda Click / Aerox",
+    "category": "Body & Style",
+    "price": 8039,
+    "old": 8995,
+    "tag": "MALL",
+    "rating": "4.9",
+    "reviews": 119,
+    "img": "/assets/product-2.jpg",
+    "desc": "Five-spoke CNC alloy wheel built for Honda Click and Aerox applications.",
+    "types": [
+      "Silver",
+      "Black",
+      "Red",
+      "Grey",
+      "Purple",
+      "Blue"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "RCB S-Series Front Fit 2-Pot Brake Caliper",
+    "model": "Aerox / NMAX / Mio Sporty",
+    "category": "Performance",
+    "price": 1924,
+    "old": 2279,
+    "tag": "RCB",
+    "rating": "4.9",
+    "reviews": 1700,
+    "img": "/assets/product-3.jpg",
+    "desc": "Two-pot front brake caliper with finish options for Aerox, NMAX, and Mio Sporty.",
+    "types": [
+      "Silver",
+      "Red",
+      "Gold",
+      "Blue",
+      "Black"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "KYB Front Shock",
+    "model": "Mio Sporty / Honda Click / NMAX",
+    "category": "Performance",
+    "price": 4899,
+    "old": 0,
+    "tag": "KYB",
+    "rating": "4.7",
+    "reviews": 183,
+    "img": "/assets/product-4.jpg",
+    "desc": "Front fork shock assembly for Mio Sporty, Honda Click, and NMAX.",
+    "types": [
+      "Sporty/Click",
+      "NMAX"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Flashcar Honda Click 125/150 V3 RGB Tail Light",
+    "model": "Honda Click",
+    "category": "Lighting",
+    "price": 4899,
+    "old": 0,
+    "tag": "22 MODES",
+    "rating": "4.9",
+    "reviews": 619,
+    "img": "/assets/product-5.jpg",
+    "desc": "Plug-and-play RGB tail light for Honda Click with 22 lighting modes.",
+    "types": [
+      "22 Modes RGB"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "PZ Tech G2 Series 305mm Adjustable Shock",
+    "model": "Aerox / NMAX",
+    "category": "Performance",
+    "price": 4899,
+    "old": 0,
+    "tag": "G2 SERIES",
+    "rating": "4.8",
+    "reviews": 85,
+    "img": "/assets/product-6.jpg",
+    "desc": "Fully adjustable 305mm rear shock with reservoir tank for Aerox and NMAX.",
+    "types": [
+      "305MM",
+      "335MM"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "JDR CNC Swing Arm",
+    "model": "PCX",
+    "category": "Performance",
+    "price": 4899,
+    "old": 0,
+    "tag": "JDR",
+    "rating": "5.0",
+    "reviews": 3,
+    "img": "/assets/product-7.jpg",
+    "desc": "CNC swing arm kit designed for Honda PCX.",
+    "types": [
+      "Standard"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Yamaha Universal Side Mirror Black/Chrome",
+    "model": "Mio Sporty / Honda Click / NMAX / Aerox / PCX",
+    "category": "Body & Style",
+    "price": 164,
+    "old": 488,
+    "tag": "POPULAR",
+    "rating": "4.7",
+    "reviews": 1200,
+    "img": "/assets/yamaha-side-mirror.webp",
+    "desc": "Universal black/chrome side mirror with a wide-angle view and adjustable angle. Suitable for Mio Sporty, Honda Click, NMAX, Aerox, and PCX setups.",
+    "types": [
+      "Black Stem",
+      "Chrome Stem"
+    ]
+  }
+]

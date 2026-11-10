@@ -1,0 +1,14 @@
+{
+  "name": "motoparts",
+  "version": "1.0.0",
+  "description": "MotoParts motorcycle parts ordering prototype",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js",
+    "check": "node tests/self-check.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

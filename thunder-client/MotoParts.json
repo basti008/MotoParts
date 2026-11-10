@@ -1,0 +1,212 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "MotoParts Final Project",
+  "version": "1.1",
+  "requests": [
+    {
+      "name": "Health",
+      "method": "GET",
+      "url": "http://localhost:3000/api/health"
+    },
+    {
+      "name": "List Parts",
+      "method": "GET",
+      "url": "http://localhost:3000/api/parts"
+    },
+    {
+      "name": "Filter NMAX",
+      "method": "GET",
+      "url": "http://localhost:3000/api/parts?model=NMAX"
+    },
+    {
+      "name": "Get Part",
+      "method": "GET",
+      "url": "http://localhost:3000/api/parts/1"
+    },
+    {
+      "name": "Get Missing Part",
+      "method": "GET",
+      "url": "http://localhost:3000/api/parts/999999"
+    },
+    {
+      "name": "Create Part",
+      "method": "POST",
+      "url": "http://localhost:3000/api/parts",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\"name\":\"Demo Brake Lever\",\"model\":\"PCX\",\"category\":\"Performance\",\"price\":899}"
+      }
+    },
+    {
+      "name": "Create Part - Invalid",
+      "method": "POST",
+      "url": "http://localhost:3000/api/parts",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\"name\":\"Invalid\",\"model\":\"UNKNOWN\",\"category\":\"Performance\",\"price\":-1}"
+      }
+    },
+    {
+      "name": "Update Part",
+      "method": "PUT",
+      "url": "http://localhost:3000/api/parts/1",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\"name\":\"JVT Power Pipe V3 Adjustable\",\"model\":\"NMAX / Aerox\",\"category\":\"Performance\",\"price\":7100}"
+      }
+    },
+    {
+      "name": "Update Part - Missing",
+      "method": "PUT",
+      "url": "http://localhost:3000/api/parts/999999",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\"name\":\"Missing\",\"model\":\"PCX\",\"category\":\"Accessories\",\"price\":100}"
+      }
+    },
+    {
+      "name": "Delete Part - Existing ID",
+      "method": "DELETE",
+      "url": "http://localhost:3000/api/parts/PART_ID"
+    },
+    {
+      "name": "Delete Part - Missing",
+      "method": "DELETE",
+      "url": "http://localhost:3000/api/parts/999999"
+    },
+    {
+      "name": "Delivery Lookup",
+      "method": "GET",
+      "url": "http://localhost:3000/api/delivery/lookup?city=Manila&province=Metro%20Manila"
+    },
+    {
+      "name": "Delivery Lookup - Missing",
+      "method": "GET",
+      "url": "http://localhost:3000/api/delivery/lookup?city=Xyzzy&province=Nowhere"
+    },
+    {
+      "name": "Delivery Weather",
+      "method": "GET",
+      "url": "http://localhost:3000/api/delivery/weather?latitude=14.5995&longitude=120.9842"
+    },
+    {
+      "name": "Integration Summary",
+      "method": "GET",
+      "url": "http://localhost:3000/api/catalog/integration-summary"
+    },
+    {
+      "name": "Checkout - Success",
+      "method": "POST",
+      "url": "http://localhost:3000/api/orders/checkout",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\"customer\":{\"name\":\"Juan Dela Cruz\",\"phone\":\"09123456789\",\"address\":\"123 Main St, Barangay Example\",\"city\":\"Manila\",\"province\":\"Metro Manila\",\"note\":\"Call on delivery\"},\"payment\":\"Cash on Delivery\",\"items\":[{\"id\":1,\"type\":\"Standard\",\"motor\":\"NMAX\",\"qty\":1}]}"
+      }
+    },
+    {
+      "name": "List Orders",
+      "method": "GET",
+      "url": "http://localhost:3000/api/orders"
+    },
+    {
+      "name": "Get Order",
+      "method": "GET",
+      "url": "http://localhost:3000/api/orders/ORDER_NO"
+    },
+    {
+      "name": "Update Order - Confirmed",
+      "method": "PATCH",
+      "url": "http://localhost:3000/api/orders/ORDER_NO",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\"status\":\"CONFIRMED\"}"
+      }
+    },
+    {
+      "name": "Update Order - Invalid",
+      "method": "PATCH",
+      "url": "http://localhost:3000/api/orders/ORDER_NO",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\"status\":\"INVALID_STATUS\"}"
+      }
+    },
+    {
+      "name": "Delete Order",
+      "method": "DELETE",
+      "url": "http://localhost:3000/api/orders/ORDER_NO"
+    },
+    {
+      "name": "Checkout - Invalid Phone",
+      "method": "POST",
+      "url": "http://localhost:3000/api/orders/checkout",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\"customer\":{\"name\":\"Juan Dela Cruz\",\"phone\":\"123\",\"address\":\"123 Main St, Barangay Example\",\"city\":\"Manila\",\"province\":\"Metro Manila\",\"note\":\"Call on delivery\"},\"payment\":\"Cash on Delivery\",\"items\":[{\"id\":1,\"type\":\"Standard\",\"motor\":\"NMAX\",\"qty\":1}]}"
+      }
+    },
+    {
+      "name": "Checkout - Provider Failure Demo",
+      "method": "POST",
+      "url": "http://localhost:3001/api/orders/checkout",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\"customer\":{\"name\":\"Juan Dela Cruz\",\"phone\":\"09123456789\",\"address\":\"123 Main St, Barangay Example\",\"city\":\"Manila\",\"province\":\"Metro Manila\",\"note\":\"Call on delivery\"},\"payment\":\"Cash on Delivery\",\"items\":[{\"id\":1,\"type\":\"Standard\",\"motor\":\"NMAX\",\"qty\":1}]}"
+      }
+    }
+  ]
+}

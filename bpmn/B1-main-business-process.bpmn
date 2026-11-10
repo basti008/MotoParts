@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" id="Definitions_B1" targetNamespace="https://motoparts.local/bpmn">
+  <process id="B1_MainBusinessProcess" name="MotoParts Main Business Process" isExecutable="false">
+    <startEvent id="Start" name="Customer starts shopping"/>
+    <task id="Browse" name="Browse motorcycle parts"/>
+    <task id="Select" name="Select model and part"/>
+    <task id="Cart" name="Add item to cart"/>
+    <exclusiveGateway id="HasItems" name="Cart has items?"/>
+    <task id="Checkout" name="Enter delivery information"/>
+    <task id="SaveOrder" name="Save confirmed order"/>
+    <endEvent id="Success" name="Order created"/>
+    <endEvent id="Empty" name="Return to catalog"/>
+    <sequenceFlow id="f1" sourceRef="Start" targetRef="Browse"/>
+    <sequenceFlow id="f2" sourceRef="Browse" targetRef="Select"/>
+    <sequenceFlow id="f3" sourceRef="Select" targetRef="Cart"/>
+    <sequenceFlow id="f4" sourceRef="Cart" targetRef="HasItems"/>
+    <sequenceFlow id="f5" sourceRef="HasItems" targetRef="Checkout"><conditionExpression>yes</conditionExpression></sequenceFlow>
+    <sequenceFlow id="f6" sourceRef="HasItems" targetRef="Empty"><conditionExpression>no</conditionExpression></sequenceFlow>
+    <sequenceFlow id="f7" sourceRef="Checkout" targetRef="SaveOrder"/>
+    <sequenceFlow id="f8" sourceRef="SaveOrder" targetRef="Success"/>
+  </process>
+</definitions>

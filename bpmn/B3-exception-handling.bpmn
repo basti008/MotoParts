@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" id="Definitions_B3" targetNamespace="https://motoparts.local/bpmn">
+  <process id="B3_ExceptionHandling" name="Online provider exception handling" isExecutable="false">
+    <startEvent id="s" name="Online lookup starts"/>
+    <task id="call" name="Call Open-Meteo"/>
+    <boundaryEvent id="timeout" name="5 second timeout" attachedToRef="call"><timerEventDefinition/></boundaryEvent>
+    <task id="failure" name="Return 503 provider unavailable"/>
+    <endEvent id="endFailure" name="Checkout not saved"/>
+    <exclusiveGateway id="error" name="Provider response valid?"/>
+    <task id="notFound" name="Return 404 location not found"/>
+    <endEvent id="end404" name="Checkout not saved"/>
+    <task id="continue" name="Continue to canonical mapping"/>
+    <endEvent id="endSuccess" name="Continue integration"/>
+    <sequenceFlow id="f1" sourceRef="s" targetRef="call"/>
+    <sequenceFlow id="f2" sourceRef="timeout" targetRef="failure"/>
+    <sequenceFlow id="f3" sourceRef="failure" targetRef="endFailure"/>
+    <sequenceFlow id="f4" sourceRef="call" targetRef="error"/>
+    <sequenceFlow id="f5" sourceRef="error" targetRef="notFound"><conditionExpression>no location</conditionExpression></sequenceFlow>
+    <sequenceFlow id="f6" sourceRef="notFound" targetRef="end404"/>
+    <sequenceFlow id="f7" sourceRef="error" targetRef="continue"><conditionExpression>valid location</conditionExpression></sequenceFlow>
+    <sequenceFlow id="f8" sourceRef="continue" targetRef="endSuccess"/>
+  </process>
+</definitions>
